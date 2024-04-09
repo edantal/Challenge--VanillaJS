@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  background-color: #000000;
+  background-image: url('./images/cinema.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-15vw);
+  width: 36vw;
+  height: 15vw;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+
+.quote__container {
+  width: auto;
+  padding: 20px 30px;
+}
+
+.quote__text {
+  position: relative;
+  font-family: 'Limelight', sans-serif;
+  font-size: 1.5rem;
+}
+.quote__text--long {
+  font-size: 1.1rem;
+}
+.fa-quote-left {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  font-size: 5em;
+  color: rgba(0, 0, 0, 0.0666);
+  z-index: -1;
+}
+.quote__character {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+}
+
+.button__container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button__container button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.7rem;
+  padding: 1px 6px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: darkred;
+  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.35);
+  font-size: 0.8rem;
+  transition: all ease-out 0.2s;
+}
+
+.button__container button:hover {
+  filter: brightness(110%);
+  transform: translate(0, -0.08rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.35);
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    width: 435px;
+    height: 15vw;
+    transform: translateX(-50%) translateY(-8.5rem);
+  }
+
+  .quote__container {
+    padding: 5px 10px;
+  }
+
+  .quote__text {
+    font-size: 1.2rem;
+  }
+}
