@@ -7,18 +7,20 @@ const loader = document.getElementById('loader')
 
 let apiQuotes = []
 
-const loading = () => {
-  loader.hidden = false
-  quoteContainer.hidden = true
-}
-
-const loadingComplete = () => {
-  loader.hidden = true
-  quoteContainer.hidden = false
+const showLoadingSpinner = isLoading => {
+  if (isLoading) {
+    loader.hidden = false
+    quoteContainer.hidden = true
+  } else {
+    if (!loader.hidden) {
+      loader.hidden = true
+      quoteContainer.hidden = false
+    }
+  }
 }
 
 const newQuoteRemote = () => {
-  loading()
+  showLoadingSpinner(true)
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
 
   const isAuthor = quote.author !== 'type.fit'
@@ -32,11 +34,11 @@ const newQuoteRemote = () => {
     : quoteText.classList.remove('quote__text--long')
   quoteText.textContent = quote.text
 
-  loadingComplete()
+  showLoadingSpinner(false)
 }
 
 const newQuoteLocal = () => {
-  loading()
+  showLoadingSpinner(true)
   const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)]
 
   authorText.textContent = quote.author ? quote.author : 'Unknown'
@@ -46,11 +48,11 @@ const newQuoteLocal = () => {
     : quoteText.classList.remove('quote__text--long')
   quoteText.textContent = quote.text
 
-  loadingComplete()
+  showLoadingSpinner(false)
 }
 
 const getQuotes = async () => {
-  loading()
+  showLoadingSpinner(true)
   const apiUrl = 'https://type.fit/api/quotes'
 
   try {
