@@ -32,6 +32,15 @@ main {
   text-align: center;
 }
 
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid darkred;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
 .quote__container {
   width: auto;
   padding: 20px 30px;
@@ -41,8 +50,10 @@ main {
   position: relative;
   font-family: 'Limelight', sans-serif;
   font-size: 1.5rem;
+  line-height: 1.1;
 }
 .quote__text--long {
+  display: inline-block;
   font-size: 1.1rem;
 }
 .fa-quote-left {
@@ -53,7 +64,7 @@ main {
   color: rgba(0, 0, 0, 0.0666);
   z-index: -1;
 }
-.quote__character {
+.quote__author {
   margin-top: 15px;
   font-size: 1rem;
   font-weight: 300;
@@ -65,6 +76,7 @@ main {
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .button__container button {
@@ -103,5 +115,14 @@ main {
 
   .quote__text {
     font-size: 1.2rem;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
