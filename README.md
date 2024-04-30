@@ -13,5 +13,6 @@ Challenge projects developed using Vanilla Javascript without using frameworks/l
 - [FontAwesome](https://fontawesome.com)
 - [GoogleFonts: Limelight](https://fonts.google.com/specimen/Limelight)
 - [GoogleFonts: Roboto](https://fonts.google.com/specimen/Roboto)
+- [GoogleFonts: Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue)
 
 </details>
